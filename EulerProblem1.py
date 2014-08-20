@@ -1,6 +1,6 @@
 # The following responds to Problem 1 on Project Euler (https://projecteuler.net/problem=1)
 
-TopNumber = input("What is the top number?")
+TopNumber = input("This program gives you a list of multiples of 3 and 5 up to a given top number.  What is the top number?")
 MultipleList = []
 CandidateMultiple = 1
 
