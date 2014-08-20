@@ -1,7 +1,7 @@
 # The following responds to Problem 2 on Project Euler (https://projecteuler.net/problem=2)
 # The problem specifies 4,000,000 as the top number, but this program allows any input number. Be careful with it.
 
-TopNumber = input("What is the top number in the Fibonacci sub-sequence?")
+TopNumber = input("This program gives you a sub-sequence of the Fibonacci sequence up to a given top number.  What is the top number in the Fibonacci sub-sequence?")
 
 i = 1
 j = 2
