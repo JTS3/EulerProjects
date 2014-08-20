@@ -4,19 +4,19 @@
 TopNumber = input("This program gives you the sum of the even elements of a sub-sequence -- up to a given top number -- of the Fibonacci sequence.  What is the top number in the Fibonacci sub-sequence?")
 
 FibList = [1, 2]
-n = 0
-while FibList[n+1] < TopNumber:
-    NextNumber = FibList[n+1] + FibList[n] 
+IndexA = 0
+while FibList[IndexA+1] < TopNumber:
+    NextNumber = FibList[IndexA+1] + FibList[IndexA] 
     if ( NextNumber > TopNumber) : break
     FibList.append(NextNumber)
-    n += 1    
+    IndexA += 1    
 print "The Fibbonacci sub-sequence terminating in the highest number less than", TopNumber,"is", FibList, "."
 
 
 TempEvenFibSum = 0
-x = 1
-while x < len(FibList):
-    EvenFibSum = TempEvenFibSum + FibList[x] 
-    x += 2
+IndexB = 1
+while IndexB < len(FibList):
+    EvenFibSum = TempEvenFibSum + FibList[IndexB] 
+    IndexB += 2
     TempEvenFibSum = EvenFibSum
 print "The sum of the even numbered elements of the subsequence is ", EvenFibSum, "."
