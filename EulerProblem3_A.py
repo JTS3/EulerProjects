@@ -1,6 +1,6 @@
-def PrimeCheck(CandidatePrime):
-    for n in range(2,(int(CandidatePrime**0.5 + 1))):
-        if CandidatePrime % n == 0:
+def prime_check(candidate_prime):
+    for n in range(2,(int(candidate_prime**0.5 + 1))):
+        if candidate_prime % n == 0:
             return False 
     return True
 
@@ -13,19 +13,20 @@ def PrimeCheck(CandidatePrime):
 #Project Euler 3  largest prime factor (http://projecteuler.net/problem=3)
 # The original problem specifies 600851475143 but this is more general. 
 
+print "   "
 print "This program reports the largest prime factor of a given goal number."
-GoalNumber = input("What is the goal number?")
+goal_number = input("What is the goal number?")
 
-CandidateLPF = GoalNumber
+candidateLPF = goal_number
 
-if PrimeCheck(CandidateLPF) == True:                         #if the number is prime then it is the Largest Prime Factor
-        print CandidateLPF
+if prime_check(candidateLPF) == True:                         #if the number is prime then it is the Largest Prime Factor
+        print candidateLPF
 else:                                                        #if the candidate isn't prime...
-    IndexB = 2                                                #start with 2
-    while IndexB <= GoalNumber:
-        if CandidateLPF % IndexB == 0:                         #If the candidate prime is divisible by an index number
-            CandidateLPF = CandidateLPF / IndexB              #then divide that candidate by the index number
-            if PrimeCheck(CandidateLPF) == True:            #Check to see if that new number is prime
-                print CandidateLPF                          #if it is, then it that candidate is the Largest Prime Factor
+    indexB = 2                                                #start with 2
+    while indexB <= goal_number:
+        if candidateLPF % indexB == 0:                         #If the candidate prime is divisible by an index number
+            candidateLPF = candidateLPF / indexB              #then divide that candidate by the index number
+            if prime_check(candidateLPF) == True:            #Check to see if that new number is prime
+                print candidateLPF                          #if it is, then it that candidate is the Largest Prime Factor
                 break
-        else: IndexB += 1                                   # else increment the index number and try the next number
+        else: indexB += 1                                   # else increment the index number and try the next number
