@@ -11,7 +11,7 @@ while fib_list[indexA+1] < top_number:
     if ( next_number > top_number) : break
     fib_list.append(next_number)
     indexA += 1    
-print "The Fibbonacci sub-sequence terminating in the highest number less than", top_number,"is", fib_list, "."
+print "The Fibonacci sub-sequence terminating in the highest number less than", top_number,"is", fib_list, "."
 
 
 even_fib_sum = 0
