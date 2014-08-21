@@ -1,7 +1,8 @@
 # The following responds to Problem 2 on Project Euler (https://projecteuler.net/problem=2)
 # The problem specifies 4,000,000 as the top number, but this program allows any input number. Be careful with it.
-
-top_number = input("This program gives you the sum of the even elements of a sub-sequence -- up to a given top number -- of the Fibonacci sequence.  What is the top number in the Fibonacci sub-sequence?")
+print "  "
+print "This program gives you the sum of the even elements of a sub-sequence -- up to a given top number -- of the Fibonacci sequence."
+top_number = input("What is the top number in the Fibonacci sub-sequence?")
 
 fib_list = [1, 2]
 indexA = 0
