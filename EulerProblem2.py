@@ -13,10 +13,10 @@ while FibList[IndexA+1] < TopNumber:
 print "The Fibbonacci sub-sequence terminating in the highest number less than", TopNumber,"is", FibList, "."
 
 
-TempEvenFibSum = 0
+EvenFibSum = 0
 IndexB = 1
 while IndexB < len(FibList):
-    EvenFibSum = TempEvenFibSum + FibList[IndexB] 
+    EvenFibSum += FibList[IndexB] 
     IndexB += 2
     TempEvenFibSum = EvenFibSum
 print "The sum of the even numbered elements of the subsequence is ", EvenFibSum, "."
