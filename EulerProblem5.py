@@ -15,7 +15,7 @@ def MultipleCheck(local_n,local_top_number,local_candidate_number):
 
 candidate_number = 2520  
 bottom_number = 2   # this does not have to start at 1. It is obvious that N%1 = 0 for all N. 
-top_number = 14
+top_number = 20
 ENDER = 0
 
 while ENDER == 0:
