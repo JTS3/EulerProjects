@@ -21,7 +21,3 @@ ENDER = 0
 while ENDER == 0:
     MultipleCheck(bottom_number, top_number, candidate_number)
     candidate_number += 1
-    
-
-# Answer found after a long run.
-# success 88648560
