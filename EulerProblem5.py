@@ -20,4 +20,8 @@ ENDER = 0
 
 while ENDER == 0:
     MultipleCheck(bottom_number, top_number, candidate_number)
+<<<<<<< HEAD
     candidate_number += 1
+=======
+    candidate_number += 1
+>>>>>>> origin/EulerEdits
