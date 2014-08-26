@@ -12,8 +12,10 @@
 from __future__ import division
 from math import ceil
 
-print "factor_digits, COUNTER, factor1, factor2, largest_palindrome"
-for a in range(1,3):
+f = open('C:\Users\JTS3\Desktop\EP4RunTime.txt','w')
+f.write("factor_digits, COUNTER, factor1, factor2, largest_palindrome \n")
+
+for a in range(1,7):
     factor_digits = a
     max_factor = (10 ** factor_digits)-1
     min_factor = 10 ** (factor_digits - 1)
@@ -28,46 +30,40 @@ for a in range(1,3):
             next_candidate = next_palindrome(candidate)
             candidate = next_candidate
         return candidate
-    
-    def next_palindrome(candidate):
-        cand = str(candidate)  
-        if len(cand) % 2 == 0:
-            middlemost_digit = int(ceil(len(cand)/2))
-            next_front = int(cand[:middlemost_digit]) - 1
-            if len(cand) == len(str(next_front)) * 2:
-                tamp = str(next_front) + str(next_front)[middlemost_digit-1::-1]
-                next_candidate = int(tamp)
-            else:
-                barb = 0
-                for i in range(0,middlemost_digit):
-                    barb += 9 * 10 ** i
-                tamp = str(next_front) + str(barb)
-                next_candidate = int(tamp)
+                
+    def isEven(X):
+        if int(X)%2 == 0:
+            return True
+        else: 
+            return False
+
+    def next_palindrome(x):
+        X = str(x)
+        if len(X) == 1:
+            next_candidate = int(X) - 1
         else:
-            middlemost_digit = int(ceil(len(cand)/2)) - 1
-            next_front = int(cand[:middlemost_digit+1]) - 1
-
-
-#THE PROBLEM IS HERE
-#NOTHING IS GETTING INTO THE FIRST PART OF THE IF STATEMENT
-
-            if len(cand) == len(str(next_front)) * 1.5:
-                tamp = str(next_front) + str(next_front)[middlemost_digit-1::-1]
-                next_candidate = int(tamp)
+            if isEven(len(X)):
+                midpoint = int(len(X)/2)
             else:
-                barb = 0
-                for i in range(0,middlemost_digit):
-                    barb += 9 * 10 ** i
-                tamp = str(next_front) + str(barb)
-                next_candidate = int(tamp)
-
-#THE PROBLEM IS IN THIS IF ELSE THING
-        
-        return next_candidate        
-        
+                midpoint = int(ceil(len(X)/2))
+            now_front = int(X[:midpoint])
+            next_front = now_front - 1
+            if len(str(now_front)) > len(str(next_front)):
+                if isEven(len(X)):
+                    next_candidate = int( str(next_front) + str(next_front)[midpoint-2::-1] + "9" )
+                else:
+                    next_candidate = int( str(next_front) + str(next_front)[midpoint-2::-1]  )
+            else:
+                if isEven(len(X)):
+                    next_candidate = int( str(next_front) + str(next_front)[midpoint-1::-1]  )
+                else: 
+                    next_candidate = int( str(next_front) + str(next_front)[midpoint-2::-1]  )
+        return next_candidate
     
     def scream(Ma,Mb,Mc, COUNTER):
-        print factor_digits,",", COUNTER,",", Mb,",", Mc,",",Ma
+        s = str(factor_digits) + "," + str(COUNTER) + "," + str(Mb) + "," + str(Mc) + "," + str(Ma) 
+        f.write(s + "\n")
+        #print factor_digits,",", COUNTER,",", Mb,",", Mc,",",Ma
     
     candidate = first_palindrome(max_candidate)
     ENDER = 0
@@ -96,3 +92,5 @@ for a in range(1,3):
                     scream("NA","NA","NA",COUNTER)
                     #print " No factor was found"
                     ENDER = 1  
+
+f.close()
