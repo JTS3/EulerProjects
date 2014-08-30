@@ -12,10 +12,10 @@
 from __future__ import division
 from math import ceil
 
-f = open('C:\Users\JTS3\Desktop\EP4RunTime.txt','w')
-f.write("factor_digits, COUNTER, factor1, factor2, largest_palindrome \n")
+#f = open('C:\Users\JTS3\Desktop\EP4RunTime.txt','w')
+#f.write("factor_digits, COUNTER, factor1, factor2, largest_palindrome \n")
 
-for a in range(1,7):
+for a in range(8,10):
     factor_digits = a
     max_factor = (10 ** factor_digits)-1
     min_factor = 10 ** (factor_digits - 1)
@@ -61,9 +61,9 @@ for a in range(1,7):
         return next_candidate
     
     def scream(Ma,Mb,Mc, COUNTER):
-        s = str(factor_digits) + "," + str(COUNTER) + "," + str(Mb) + "," + str(Mc) + "," + str(Ma) 
-        f.write(s + "\n")
-        #print factor_digits,",", COUNTER,",", Mb,",", Mc,",",Ma
+        #s = str(factor_digits) + "," + str(COUNTER) + "," + str(Mb) + "," + str(Mc) + "," + str(Ma) 
+        #f.write(s + "\n")
+        print factor_digits,",", COUNTER,",", Mb,",", Mc,",",Ma
     
     candidate = first_palindrome(max_candidate)
     ENDER = 0
@@ -78,13 +78,13 @@ for a in range(1,7):
             b = next_palindrome(candidate)
             candidate = b
             #          print "The largest palindromic number evenly divisible into",factor_digits, "digit factors is: ", candidate," and its factors are:", root_cand,"and", root_cand 
-#            ENDER = 1
+            ENDER = 1
         else:
             for n in range( int(ceil(root_cand)), max_factor+1):
                 if (candidate / n <= max_factor) & (candidate / n >= min_factor) & (candidate % n == 0):
                     scream(candidate, n, int(candidate/n), COUNTER)
     #                print "The largest palindromic number evenly divisible into",factor_digits, "digit factors is: ", candidate," and its factors are:", n,"and", int(candidate / n) 
- #                   ENDER = 1
+                    ENDER = 1
             else:
                 b = next_palindrome(candidate)         #clear up whether I take the output of this and reassign candidate at the end, or whether I alter a global in the function.
                 candidate = b
@@ -93,4 +93,4 @@ for a in range(1,7):
                     #print " No factor was found"
                     ENDER = 1  
 
-f.close()
+#f.close()
