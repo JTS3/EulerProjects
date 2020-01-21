@@ -1,6 +1,6 @@
 # The following responds to Problem 1 on Project Euler (https://projecteuler.net/problem=1)
 
-TopNumber = input("What is the top number?")
+TopNumber = int(input("What is the top number?"))
 MultipleList = []
 n = 1
 
@@ -10,5 +10,5 @@ while n < TopNumber:
     elif n % 3 == 0 : MultipleList.append(n)
     n += 1
 
-print "The multiples of 5 and 3 up to", TopNumber, "are:", MultipleList, "."
-print "The sum of these multiples is", sum(MultipleList), "."
+print("The multiples of 5 and 3 up to", TopNumber, "are:", MultipleList, ".")
+print("The sum of these multiples is", sum(MultipleList), ".")
