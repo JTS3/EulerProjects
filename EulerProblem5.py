@@ -42,8 +42,8 @@ def lcm(inputvector):
 answer = 1
 maxmultiple = 20
 for i in range(1,maxmultiple):
-    whoop = lcm([answer,i])
-    answer = max(answer,whoop)
+    tempanswer = lcm([answer,i])
+    answer = max(answer,tempanswer)
 
 print("The smallest positive number that is evenly divisible by all of the numbers from 1 to 20 is ", answer)
 
