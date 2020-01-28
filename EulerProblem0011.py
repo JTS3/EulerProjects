@@ -1,4 +1,4 @@
-#Project Euler 8  Largest product in a grid (http://projecteuler.net/problem=11)
+#Project Euler 11  Largest product in a grid (http://projecteuler.net/problem=11)
 #What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
 #Get the big number by reading the webpage
